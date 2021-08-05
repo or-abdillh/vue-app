@@ -1,47 +1,67 @@
 <template>
-   <div :class="isChange ? 'bg-primary' : 'bg-white'" class="mx-2 mt-3 shadow border border-1 border-secondary rounded px-3 py-3">
-      <div class="row w-100 d-flex justify-content-center align-items-center">
-         <div class="col col-4 d-flex justify-content-center">
-            <img :class="isChange ? 'bg-light' : 'bg-white'" class="border border-1 rounded-circle" src="./assets/1613282023468-picsay.png" width="90" alt="">
-         </div>
-         <div class="col col-7">
-            <p class="fw-bold mb-0 fs-6" @title="name" >{{ name }}</p>
-            <p :class="isChange ? 'text-white' : 'text-muted'" class="small" >{{ message }}</p>
-            <div class="d-flex" >
-               <a class="text-decoration-none text-black" :href="href">
-                  <i v-for="item in icons" class="me-2 fs-4" v-bind:class="item.icon"></i>
-               </a>   
-            </div>
-         </div>
+   <div :class="element.bgCard" class="border border-3 pt-3 w-75 mt-5 mx-auto px-3 py-2 shadow-lg rounded">
+      <p :class="element.bgText" class="text-center" >{{ header }}</p>
+      <h2 :class="element.bgText" class="text-center display-1 fw-bold">
+         {{ count }}
+      </h2>
+      <div class="w-50 mx-auto justify-content-center  d-flex">
+         <button v-on:click="increment" class="btn btn-primary border border-2 fw-bold mx-2">+</button>
+         <button v-on:click="decrement" :disabled="over" class="btn btn-success border border-2 fw-bold mx-2">-</button>
       </div>
-   </div>
-   
-   <div class="px-2 mt-3">
-      <button @click="changeTheme" class="btn btn-primary px-3 py-2">
-         Change Theme
-         <i class="fas fa-exchange-alt ms-2"></i>
-      </button>
+      
+      <div class="mt-3 d-flex justify-content-center w-100" >
+         <button :class="element.btnBg" v-on:click="changeMode" class="btn rounded-circle px-2 py-1">
+         <i v-if="lightMode" class="fas fa-moon"></i>
+         <i v-else="lightMode" class="fas fa-sun"></i>
+      </button>   
+      </div>
+      
+      <p class="text-center mt-3 text-muted" >{{ footer }}</p>
    </div>
 </template>
 
 <script>
- export default {
-    data() {
-       return {
-          isChange: false,
-          name: 'OKA R. ABDILLAH',
-          message: 'Junior Front End Developer',
-          icons: [
-             { icon: "fab fa-instagram"},
-             { icon: "fab fa-facebook-square"},
-             { icon: "fab fa-github-square"}
-          ]
-       }
-    },
-    methods: {
-       changeTheme() {
-          this.isChange = !this.isChange;
-       }
-    }
- }
+
+   export default {
+      data() {
+         return {
+            element: {
+              bgCard: 'bg-white',
+              btnBg: 'btn-dark',
+              bgText: 'text-dark'
+            },
+            count: 0,
+            over: true,
+            lightMode: true,
+            header: 'Counter App',
+            footer: 'Made with Vue JS 3',
+         }
+      },
+      methods: {
+         increment() {
+            this.count += 1;
+            this.over = false;
+         },
+         decrement() {
+            if (this.count > 0) {
+               this.count -= 1;
+               if (this.count === 0) this.over = true;
+            }
+         },
+         changeMode() {
+            this.lightMode = !this.lightMode;
+            
+            if (this.lightMode) {
+               this.element.bgCard = 'bg-white';
+               this.element.btnBg = 'btn-dark';
+               this.element.bgText = 'text-dark';
+            }
+            else {
+               this.element.bgCard = 'bg-dark';
+               this.element.btnBg = 'btn-light';
+               this.element.bgText = 'text-light';
+            }
+         }
+      }
+   }
 </script>
