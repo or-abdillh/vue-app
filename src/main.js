@@ -1,4 +1,8 @@
 import { createApp } from 'vue'
-import App from './App.vue'
 
-createApp(App).mount('#app')
+//CounterApp Comoponents
+import CountApp from './components/CounterApp.vue'
+
+//TimerApp Components
+import TimerApp from './components/TimerApp.vue'
+createApp(TimerApp).mount('#app')
