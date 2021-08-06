@@ -13,7 +13,7 @@
          <button v-bind:disabled="hidden" v-on:click="runTimer" class="d-block w-100 btn btn-primary" >Start</button>
          <button v-on:click="changeMode" v-bind:class="lightMode ? 'btn-dark' : 'btn-light'" class="btn btn-circle mt-3 border rounded-circle">
             <i v-if="lightMode" class="fas fa-moon"></i>
-            <i v-else="lightMode" class="fas fa-sun" ></i>
+            <i v-else class="fas fa-sun" ></i>
          </button>
       </div>
       <p class="text-muted text-center mt-2" >{{ footer }}</p>
