@@ -8,4 +8,7 @@ import TimerApp from './components/TimerApp.vue'
 
 //Form components
 import Form from './components/Form.vue'
-createApp(Form).mount('#app')
+
+//Login components
+import Login from './components/Login.vue'
+createApp(Login).mount('#app')
