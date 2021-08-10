@@ -12,8 +12,8 @@
             <input v-model="formValues.email" class="form-control border border-2 border-secondary" required="" type="email" name="email" id="email" placeholder="E-mail" />
          </div>
          <div class="input-group d-flex flex-nowrap mb-2">
-            <input v-model="formValues.password" v-on:input="pwdValidation" v-on:blur="clearAlert" class="form-control border border-2 border-secondary" required="" v-bind:type="isHidden ? 'password' : 'text'" name="password" id="password" placeholder="Create password"/>
-            <span v-on:click="showPassword" class="input-group-text bg-secondary text-light border border-2 border-secondary" >
+            <input v-model="formValues.password" v-on:input="pwdValidation" class="form-control border border-2 border-secondary" required="" v-bind:type="isHidden ? 'password' : 'text'" name="password" id="password" placeholder="Create password"/>
+            <span v-on:click="showPassword" class="input-group-text btn btn-secondary text-light border border-2 border-secondary" >
                <i v-if="isHidden" class="fas fa-eye-slash"></i>
                <i v-else class="fas fa-eye" ></i>
             </span>
@@ -86,12 +86,6 @@
             
             if (lengthPwd < 8) this.isPwdValid = false;
             else this.isPwdValid = true;
-         },
-         clearAlert() {
-            let form = this.formValues;
-            let lengthPwd = form.password.split('').length;
-            
-            if(lengthPwd <= 0) this.isPwdValid = true;
          }
       }
    }

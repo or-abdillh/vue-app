@@ -10,5 +10,5 @@ import TimerApp from './components/TimerApp.vue'
 import Form from './components/Form.vue'
 
 //Login components
-import Login from './components/Login.vue'
-createApp(Login).mount('#app')
+import SignUp from './components/SignUp.vue'
+createApp(SignUp).mount('#app')
