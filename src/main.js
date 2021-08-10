@@ -11,4 +11,8 @@ import Form from './components/Form.vue'
 
 //Login components
 import SignUp from './components/SignUp.vue'
-createApp(SignUp).mount('#app')
+
+//BMI Calculator components
+import BmiCalculator from './components/BmiCalculator.vue';
+
+createApp(BmiCalculator).mount('#app')
