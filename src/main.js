@@ -18,4 +18,4 @@ import BmiCalculator from './components/BmiCalculator.vue';
 //Hotel App components
 import HotelApp from './components/HotelApp.vue'
 
-createApp(HotelApp).mount('#app')
+createApp(BmiCalculator).mount('#app')
