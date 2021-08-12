@@ -1,7 +1,6 @@
 <template>
 
    <section class="container bg-white mt-5 mx-auto px-5 py-3">
-      <img class="img-thumbnail rounded-circle" src="src/assets/1613282023468-picsay.png"  alt="hero" />
       <h2 class="mt-4 mb-3" >Sign Up</h2>
       <form >
          <div class="mb-3 d-flex">
